@@ -482,9 +482,10 @@
         .badges-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            max-width: 100%;
+            gap: 1.5rem;
+            max-width: 700px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .badge-stat {
@@ -630,61 +631,6 @@
             border-radius: 5px;
         }
 
-        /* STUDENTS GALLERY */
-        .students-section {
-            padding: 3rem 1rem;
-            background: var(--gray);
-        }
-
-        .students-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            max-width: 100%;
-            margin: 2rem auto 0;
-        }
-
-        .student-card {
-            position: relative;
-            padding-bottom: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            background: var(--light-gray);
-            transition: transform 0.3s ease;
-        }
-
-        .student-card:active {
-            transform: scale(1.05);
-        }
-
-        .student-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%) brightness(0.8);
-        }
-
-        .student-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-        }
-
-        .student-result {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-        }
-
         /* ABOUT SECTION */
         .about-section {
             padding: 4rem 1rem;
@@ -750,6 +696,10 @@
 
         .methodology-card:hover {
             transform: translateY(-5px);
+        }
+
+        .methodology-card-full {
+            grid-column: 1 / -1;
         }
 
         .methodology-icon {
@@ -1350,11 +1300,11 @@
                 
                 <iframe 
                     id="vsl-video"
-                    src="https://www.youtube.com/embed/WTy3utex21w?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0"
+                    src="https://www.youtube.com/embed/WTy3utex21w?enablejsapi=1&controls=1&modestbranding=1&rel=0&showinfo=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&autohide=1&color=white&loop=1&playlist=WTy3utex21w"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    onload="hideVideoSkeleton()">
+                    onload="hideVideoSkeleton()"
+                    style="pointer-events: auto;">
                 </iframe>
 
                 <div class="mute-overlay" id="mute-overlay">
@@ -1400,72 +1350,58 @@
         
         <div class="testimonials-carousel-container">
             <div class="testimonials-carousel" id="testimonials-carousel">
-                <div class="testimonial-card" onclick="window.open('https://youtu.be/4joWui-1fYg', '_blank')">
-                    <div class="testimonial-thumbnail">
-                        <img src="https://img.youtube.com/vi/4joWui-1fYg/maxresdefault.jpg" alt="Testimonio" loading="lazy">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-name">Trabajo en Google</div>
-                        <div class="testimonial-result">Nivel profesional alcanzado</div>
-                        <div class="testimonial-description">
-                            Método CLIL aplicado a casos reales de tecnología.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card" onclick="window.open('https://youtu.be/juZyBA4RhuQ', '_blank')">
-                    <div class="testimonial-thumbnail">
-                        <img src="https://img.youtube.com/vi/juZyBA4RhuQ/maxresdefault.jpg" alt="Testimonio" loading="lazy">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-name">A2 a B2 en 6 meses</div>
-                        <div class="testimonial-result">Avance acelerado</div>
-                        <div class="testimonial-description">
-                            Progreso medible con plataforma ClickOn.
-                        </div>
-                    </div>
-                </div>
-
                 <div class="testimonial-card" onclick="window.open('https://youtu.be/nMR_HTzmzn8', '_blank')">
                     <div class="testimonial-thumbnail">
-                        <img src="https://img.youtube.com/vi/nMR_HTzmzn8/maxresdefault.jpg" alt="Testimonio" loading="lazy">
+                        <img src="https://img.youtube.com/vi/nMR_HTzmzn8/maxresdefault.jpg" alt="Testimonio Daniela Villegas" loading="lazy">
                         <div class="play-overlay">▶</div>
                     </div>
                     <div class="testimonial-content">
-                        <div class="testimonial-name">TOEFL 100+</div>
-                        <div class="testimonial-result">Certificación lograda</div>
+                        <div class="testimonial-name">Daniela Villegas</div>
+                        <div class="testimonial-result">Directora Administrativa</div>
                         <div class="testimonial-description">
-                            Preparación enfocada en resultados reales.
+                            Superó el miedo a hablar en inglés. Hoy se comunica con total seguridad.
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card" onclick="window.open('https://youtu.be/fKgGnIXMxIM', '_blank')">
                     <div class="testimonial-thumbnail">
-                        <img src="https://img.youtube.com/vi/fKgGnIXMxIM/maxresdefault.jpg" alt="Testimonio" loading="lazy">
+                        <img src="https://img.youtube.com/vi/fKgGnIXMxIM/maxresdefault.jpg" alt="Testimonio Vera" loading="lazy">
                         <div class="play-overlay">▶</div>
                     </div>
                     <div class="testimonial-content">
-                        <div class="testimonial-name">Viajó a Canadá</div>
-                        <div class="testimonial-result">Sueño cumplido</div>
+                        <div class="testimonial-name">Verania Lima (Vera)</div>
+                        <div class="testimonial-result">Profesionista</div>
                         <div class="testimonial-description">
-                            Inglés aplicado a oportunidades internacionales.
+                            Tras múltiples intentos en otras escuelas, finalmente logró resultados reales.
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card" onclick="window.open('https://youtu.be/S_JVtCQm574', '_blank')">
+                <div class="testimonial-card" onclick="window.open('https://youtu.be/juZyBA4RhuQ', '_blank')">
                     <div class="testimonial-thumbnail">
-                        <img src="https://img.youtube.com/vi/S_JVtCQm574/maxresdefault.jpg" alt="Testimonio" loading="lazy">
+                        <img src="https://img.youtube.com/vi/juZyBA4RhuQ/maxresdefault.jpg" alt="Testimonio Carmen" loading="lazy">
                         <div class="play-overlay">▶</div>
                     </div>
                     <div class="testimonial-content">
-                        <div class="testimonial-name">Ascenso gerencial</div>
-                        <div class="testimonial-result">Crecimiento profesional</div>
+                        <div class="testimonial-name">Carmen Pérez</div>
+                        <div class="testimonial-result">Estudiante de 65 años</div>
                         <div class="testimonial-description">
-                            El inglés como herramienta de liderazgo.
+                            Cumplió su meta: dominar el inglés y usarlo en su vida diaria.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" onclick="window.open('https://youtu.be/4joWui-1fYg', '_blank')">
+                    <div class="testimonial-thumbnail">
+                        <img src="https://img.youtube.com/vi/4joWui-1fYg/maxresdefault.jpg" alt="Testimonio Denisse Peraza" loading="lazy">
+                        <div class="play-overlay">▶</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Denisse Peraza</div>
+                        <div class="testimonial-result">Trabaja con jugadores</div>
+                        <div class="testimonial-description">
+                            Dejó atrás el Google Translate. Hoy usa el inglés con fluidez natural.
                         </div>
                     </div>
                 </div>
@@ -1475,55 +1411,11 @@
         </div>
     </section>
 
-    <!-- STUDENTS GALLERY -->
-    <section class="students-section">
-        <h2 class="section-title">+ de <span style="color: var(--secondary);">20,000</span> Profesionistas han mejorado su inglés</h2>
-        
-        <div class="students-grid">
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">Trabajo en Google</div>
-                </div>
-            </div>
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">A2 a B2 en 6 meses</div>
-                </div>
-            </div>
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">TOEFL 100+</div>
-                </div>
-            </div>
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">Viajó a Canadá</div>
-                </div>
-            </div>
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">Ascenso gerencial</div>
-                </div>
-            </div>
-            <div class="student-card">
-                <img class="student-image" src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?w=400&h=400&fit=crop" alt="Estudiante" loading="lazy">
-                <div class="student-overlay">
-                    <div class="student-result">Inglés negocios</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ABOUT SECTION - THE ENGLISH EFFECT -->
     <section class="about-section">
         <div class="about-container">
             <div class="about-content-full">
-                <div class="about-badge">🌐 El inglés no se aprende. Se demuestra.</div>
+                <div class="about-badge">🌐 El inglés no se memoriza: se comprende, se vive y se utiliza.</div>
                 
                 <h2 class="about-title">
                     No enseñamos inglés.<br>
@@ -1531,7 +1423,7 @@
                 </h2>
 
                 <p class="about-lead">
-                    En GLISH ayudamos a profesionales como tú a <strong>dominar el inglés con resultados medibles</strong>, aplicando las metodologías más avanzadas que convierten cada hora de estudio en evidencia real de progreso.
+                    En GLISH ayudamos a profesionales como tú a <strong>dominar el inglés con resultados medibles</strong>, aplicando metodologías avanzadas que convierten cada hora de estudio en progreso real y funcional.
                 </p>
 
                 <div class="methodology-grid">
@@ -1539,10 +1431,10 @@
                         <div class="methodology-icon">🎯</div>
                         <h3>Método CLIL</h3>
                         <p class="methodology-subtitle">Content and Language Integrated Learning</p>
-                        <p>Aprendes inglés resolviendo <strong>casos reales de tu industria</strong>. No memorizas listas de palabras, resuelves problemas profesionales mientras dominas el idioma.</p>
+                        <p>Integras de manera simultánea <strong>contenido + idioma + cognición + comunicación + cultura</strong>. No memorizas listas, resuelves problemas reales de tu industria mientras dominas el idioma.</p>
                         <ul class="methodology-benefits">
                             <li>✅ Contenido aplicable a tu trabajo</li>
-                            <li>✅ Contexto profesional real</li>
+                            <li>✅ Vocabulario técnico de +300 profesiones</li>
                             <li>✅ Aprendizaje natural y efectivo</li>
                         </ul>
                     </div>
@@ -1551,11 +1443,23 @@
                         <div class="methodology-icon">📊</div>
                         <h3>Plataforma ClickOn</h3>
                         <p class="methodology-subtitle">Medición y seguimiento en tiempo real</p>
-                        <p>Cada sesión genera <strong>evidencia tangible de tu avance</strong>. Ves tu progreso, identificas áreas de mejora y celebras cada logro con datos reales.</p>
+                        <p>Cada sesión genera <strong>evidencia tangible de tu avance</strong>. Refuerzas vocabulario, practicas comprensión auditiva y trabajas contenidos alineados a tu especialidad.</p>
                         <ul class="methodology-benefits">
                             <li>✅ Dashboard de progreso personalizado</li>
                             <li>✅ Evaluaciones automáticas</li>
-                            <li>✅ Reportes de desempeño</li>
+                            <li>✅ Complementa y consolida tus clases</li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology-card methodology-card-full">
+                        <div class="methodology-icon">👥</div>
+                        <h3>Acompañamiento Humano</h3>
+                        <p class="methodology-subtitle">El estudiante nunca aprende solo</p>
+                        <p>La tecnología no reemplaza al factor humano. Nuestro modelo se sostiene en <strong>coaches capacitados, orientación académica constante y seguimiento personalizado</strong> durante todo tu proceso de aprendizaje.</p>
+                        <ul class="methodology-benefits">
+                            <li>✅ Coaches certificados en CLIL</li>
+                            <li>✅ Seguimiento semanal de progreso</li>
+                            <li>✅ Acompañamiento durante todo el proceso</li>
                         </ul>
                     </div>
                 </div>
@@ -1563,17 +1467,17 @@
                 <div class="value-proposition">
                     <div class="value-item">
                         <div class="value-number">12</div>
-                        <div class="value-text">Semanas para ver<br><strong>resultados medibles</strong></div>
+                        <div class="value-text">Meses de programa<br><strong>progresivo estructurado</strong></div>
                     </div>
                     <div class="value-divider"></div>
                     <div class="value-item">
                         <div class="value-icon">🚀</div>
-                        <div class="value-text">Progreso que se traduce en<br><strong>oportunidades reales</strong></div>
+                        <div class="value-text">6 niveles claros<br><strong>desde First Steps hasta Advanced</strong></div>
                     </div>
                     <div class="value-divider"></div>
                     <div class="value-item">
                         <div class="value-icon">🌍</div>
-                        <div class="value-text">Del local al global<br><strong>Tu pasaporte profesional</strong></div>
+                        <div class="value-text">Del local al global<br><strong>Usuario funcional del idioma</strong></div>
                     </div>
                 </div>
 
@@ -1598,12 +1502,17 @@
                         <div class="comparison-row">
                             <div class="comparison-item traditional">🕐 Años para ver resultados</div>
                             <div class="comparison-vs"></div>
-                            <div class="comparison-item glish">⚡ 12 semanas de progreso medible</div>
+                            <div class="comparison-item glish">⚡ Progreso visible desde el día 1</div>
                         </div>
                         <div class="comparison-row">
-                            <div class="comparison-item traditional">👨‍🏫 Clases genéricas</div>
+                            <div class="comparison-item traditional">👨‍🏫 Clases genéricas para todos</div>
                             <div class="comparison-vs"></div>
-                            <div class="comparison-item glish">💼 Aplicado a tu carrera</div>
+                            <div class="comparison-item glish">💼 Especializado en +300 profesiones</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-item traditional">🤖 Aprendes solo con apps</div>
+                            <div class="comparison-vs"></div>
+                            <div class="comparison-item glish">👥 Acompañamiento humano constante</div>
                         </div>
                     </div>
                 </div>
